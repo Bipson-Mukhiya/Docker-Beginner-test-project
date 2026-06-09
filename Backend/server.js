@@ -14,7 +14,7 @@ const io = new Server(httpServer, {
 })
 
 const ySocketIO = new YSocketIO(io)
-ySocketIO.initialize()
+ySocketIO.initialize() // Initialize the YSocketIO server
 
 
 app.get('/', (req, res) => {    
@@ -33,20 +33,6 @@ app.get('/health', (req, res) => {
 })
 
 
-const PORT = process.env.PORT || 3000
-
-httpServer.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`)
-})
-
-httpServer.on('error', (err) => {
-    if (err.code === 'EADDRINUSE') {
-        console.error(`Port ${PORT} is already in use. Retrying in 2 seconds...`)
-        setTimeout(() => {
-            httpServer.close()
-            httpServer.listen(PORT)
-        }, 2000)
-    } else {
-        throw err
-    }
+httpServer.listen(3000, () => {
+    console.log('Server is running on port 3000')
 })
