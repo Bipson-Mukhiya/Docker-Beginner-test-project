@@ -1,3 +1,9 @@
+// ─── ESLint Flat Configuration (ESLint v9) ───────────────────────────────────
+// Extends recommended JS rules + react-hooks + react-refresh (Vite).
+// Ignores dist/; treats unused vars as errors, except uppercase names and
+// underscore-prefixed variables (common for React components).
+// ─────────────────────────────────────────────────────────────────────────────
+
 import js from '@eslint/js'
 import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
