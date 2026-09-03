@@ -1,0 +1,12 @@
+Frontend => build [npm run build ] => dist
+copy dist folder content in Backend /public folder
+run Backend server [node server.js]
+
+
+# the commands used by docker are:-
+docker build . -t Backend
+docker run Backend:latest
+docker run -p 4000:3000 Backend
+
+# in production we use multi-stage build
+

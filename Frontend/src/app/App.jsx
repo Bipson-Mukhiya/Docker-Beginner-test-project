@@ -34,13 +34,9 @@ function App() {
       return
     }
 
-    // Connect to the backend Socket.IO server with Yjs sync
-    const provider = new SocketIOProvider(
-      'http://localhost:3000',
-      'monaco-demo',
-      ydoc,
-      { autoConnect: true },
-    )
+    const provider = new SocketIOProvider("/", "monaco-demo", ydoc, {
+      autoConnect: true,
+    })
     providerRef.current = provider
 
     // Broadcast this user's username to all other connected clients
