@@ -10,3 +10,13 @@ docker run -p 4000:3000 Backend
 
 # in production we use multi-stage build
 
+# Troubleshooting: Cannot find package 'express'
+# Error seen when running: cd Backend && node server.js
+# Node said it could not find the 'express' package.
+# This was not a bug in server.js. The import is correct.
+# The Backend folder had no node_modules, so packages were never installed.
+# Fix: from the Backend folder run  npm install
+# After that, node server.js starts and listens on port 3000.
+# Small Docker note: use  AS  (same case as FROM) in multi-stage builds
+# so Docker does not warn about FromAsCasing.
+

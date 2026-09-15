@@ -22,7 +22,7 @@
 # # build the frontend [dist folder]
 # # copy the dist folder to the backend public folder
 
-FROM node:22.23.2-alpine as frontend-builder
+FROM node:22.23.2-alpine AS frontend-builder
 
 COPY ./Frontend /app
 
@@ -32,7 +32,7 @@ RUN npm install
 RUN npm run build
 
 # Build the backend image
-FROM node:22.23.2-alpine as backend-builder
+FROM node:22.23.2-alpine AS backend-builder
 
 COPY ./Backend /app
 
